@@ -1,22 +1,10 @@
 package ch.alan736.extraspork;
 
-
-
 import ch.alan736.extraspork.commands.*;
 import ch.alan736.extraspork.listeners.ConnectionListener;
-
-
-
 import ch.alan736.extraspork.listeners.DeathListener;
 import ch.alan736.extraspork.listeners.KillListener;
 import ch.alan736.extraspork.listeners.SporkPGMPhaseListener;
-import io.sporkpgm.player.SporkPlayer;
-
-
-
-
-
-
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
