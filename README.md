@@ -13,9 +13,13 @@ Currently added features :
     
 Of course, ExtraSpork requires the latest release of [SporkPGM][1]
 
+##Issues
+
+Do you have issues with this plugin ? Please report them via the issues tab (on the right)
+
 ##Thanks to
 
-[ParaPenguin][2] for your awesome plugin, SporkPGM
+[ParaPenguin][2] for his awesome plugin, SporkPGM
 
 
   [1]: https://github.com/ParaPenguin/SporkPGM/releases/latest
