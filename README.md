@@ -6,8 +6,8 @@ Add Features to SporkPGM v.1.1.1 (Latest release)
 ##Features
 
 Currently added features : 
-    - **/stats** : Shows your Kills, Deaths and KD during a match
-    (The plugin reset your stats when someone type the start command)
+- **/stats** : Shows your Kills, Deaths and KD during a match
+(The plugin reset your stats when someone type the start command)
     
 ##Dependency
     
