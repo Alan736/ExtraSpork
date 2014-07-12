@@ -93,14 +93,6 @@ public class ExtraSpork extends JavaPlugin {
 		return true;
 	}
 	
-	public void InitKillCounter() {
-		
-		for(SporkPlayer Player : SporkPlayer.getPlayers()) {
-			Player.isObserver();
-		}
-		this.getConfig().addDefault("PlayerName", 0);
-	}
-	
 	private void registerListeners() {
 		registerListener(new ConnectionListener());
 		registerListener(new KillListener());
