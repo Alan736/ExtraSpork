@@ -42,8 +42,6 @@ public class ExtraSpork extends JavaPlugin {
 	public void onEnable() {
 		Extraspork = this;
 		getConfig().set("scoreboard", null);
-		// this.getConfig().addDefault("scoreboard", "");
-		// TO DO : - Faire un "scoreboard" des kills et des morts des joueurs et sauvegarder ça dans un fichier yml.
 		
 		registerCommands();
 		registerListeners();
