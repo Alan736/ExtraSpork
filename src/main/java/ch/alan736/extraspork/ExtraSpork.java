@@ -30,6 +30,7 @@ public class ExtraSpork extends JavaPlugin {
 	public void onEnable() {
 		Extraspork = this;
 		getConfig().set("scoreboard", null);
+		saveConfig();
 		
 		registerCommands();
 		registerListeners();
