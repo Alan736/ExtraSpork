@@ -4,3 +4,4 @@ main: ${plugin.mainClass}
 version: ${project.version}
 authors: [Alan736]
 prefix: ExtraSpork
+dependency : SporkPGM

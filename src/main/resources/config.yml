@@ -1,1 +1,6 @@
+#ExtraSpork Config.yml
+
+#Add to the whitelist the referees in the SporkPGM config.yml
+refereewhitelist : false
+#Don't touch this ! This is for the /stats command !
 scoreboard:

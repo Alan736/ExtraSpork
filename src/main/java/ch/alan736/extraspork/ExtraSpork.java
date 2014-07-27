@@ -1,11 +1,16 @@
 package ch.alan736.extraspork;
 
+
+import java.io.File;
+import java.util.List;
+
 import ch.alan736.extraspork.commands.*;
 import ch.alan736.extraspork.listeners.ConnectionListener;
 import ch.alan736.extraspork.listeners.DeathListener;
 import ch.alan736.extraspork.listeners.KillListener;
 import ch.alan736.extraspork.listeners.SporkPGMPhaseListener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -28,10 +33,12 @@ public class ExtraSpork extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		LoadConfig();
+	
+		if (getConfig().getBoolean("refereewhitelist")) {
+			CheckWhitelist();
+		}
 		Extraspork = this;
-		getConfig().set("scoreboard", null);
-		saveConfig();
-		
 		registerCommands();
 		registerListeners();
 		
@@ -40,9 +47,12 @@ public class ExtraSpork extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		for(String key : getConfig().getKeys(false)){
-			getConfig().set(key,null);
+			if (key.contains("scoreboard")) {
+				getConfig().set(key,null);
+				saveConfig();
+			}
 		}
-		saveConfig();
+		
 	}
 	
 	private void registerCommands() {
@@ -97,4 +107,25 @@ public class ExtraSpork extends JavaPlugin {
 		return Extraspork;
 	}
 	
+	public void CheckWhitelist() {
+		
+		List <String> Referee = Bukkit.getPluginManager().getPlugin("SporkPGM").getConfig().getStringList("settings.referees");
+		String Whitelist = Bukkit.getServer().getWhitelistedPlayers().toString();
+		
+		for (String RefereePlayer : Referee) {
+			if (!Whitelist.contains((RefereePlayer.toLowerCase()))) {
+				Bukkit.getOfflinePlayer(RefereePlayer).setWhitelisted(true);	
+				Extraspork.getLogger().info("The referee " + RefereePlayer + " added to the whitelist");
+			}
+		}
+	}
+	
+	public void LoadConfig() {
+		if(!new File(getDataFolder(), "config.yml").exists())
+		{
+			getConfig().options().copyDefaults(true);
+			saveConfig();
+		}
+
+	}
 }

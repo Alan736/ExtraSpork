@@ -8,6 +8,8 @@ Add Features to SporkPGM v.1.1.1 (Latest release)
 Currently added features : 
 - **/stats** : Shows your Kills, Deaths and KD during a match
 (The plugin reset your stats when someone type the start command)
+- **RefereeWhitelist** : Add all the referees from SporkPGM in the whitelist
+(If you want to use this features, you have to change in the config.yml the key "refereewhitelist" to true)
     
 ##Dependency
     
